@@ -1,5 +1,11 @@
 import pymongo
 import os
+from dotenv import load_dotenv
+
+# For all further projects use .env file and dotenv :D and store environmental variables in .env
+# everything secret into .env stripe/secretkeys/environvariables/ EVERYTHING
+
+load_dotenv()
 
 MONGODB_URI = os.getenv("MONGO_URI")
 DBS_NAME = "myTestDB"
@@ -39,7 +45,7 @@ def find_record():
         print("")
         for k,v in doc.items():
             if k != "_id":
-                print(k.capitalis() + ": " + v.capitalize())
+                print(k.capitalize() + ": " + v.capitalize())
 
 
     if not doc:
